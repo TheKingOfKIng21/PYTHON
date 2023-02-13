@@ -1,0 +1,54 @@
+{"intents": [
+        {"tag": "us",
+         "patterns": ["¿Qué significa SMI?", "¿Quienes son?", "¿Qué visión tienen?", "¿Cuál es su misión?", "Good day", "Hola?"],
+         "responses": ["SMI es un acrónimo para Show Me Innovation :)",
+           "Somos una marca dedicada ;). Fundada en 2014, SMI es una marca de componentes de computación centrada en la innovación y la calidad de sus productos, siguiendo las pautas que marca el avance de la tecnología más reciente a nivel mundial. A medida que SMI evoluciona con la industria y los estilos de vida cambiantes, se enfoca en habilitar un mundo donde el hardware y el software se fusionarán entre sí, creando ecosistemas y abriendo nuevas posibilidades tanto para los consumidores como para las empresas que confían en nosotros.",
+           "Evolucionar con la industria, cambiando los estilos de vida al continuar impulsando la innovación en los negocios existentes, mientras nos expandimos a nuevos territorios.",
+            "En el mercado de componentes de PC y pantallas, SMI se compromete a fortalecer los cimientos con innovaciones tecnológicas y diseñar líneas de productos de excelente calidad para las necesidades específicas de los jugadores, creadores y profesionales."]
+        },
+        {"tag": "greeting",
+         "patterns": ["Hola", "¿Qué tal?", "¿Hay alguien ahí?", "Alo", "Buenos días", "Buenas tardes", "Buenas noches", "Buenas"],
+         "responses": ["Hola, gracias por ponerte en contacto con nosotros!", "Bien ahora que estás aquí", "Hola! Bienvenido",
+                       "Bueenas!! :)" ]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Adios!", "Hasta luego", "Gracias por la información", "Muchas gracias, hasta luego"],
+         "responses": ["Hasta luego!", "Ten un buen día!", "No dudes en contactarnos si tienes alguna otra duda", "Para servirte :)"]
+        },
+        {"tag": "thanks",
+         "patterns": ["Gracias!", "Agradecido", "Excelente, gracias"],
+         "responses": ["Feliz de ayudarte!", "Gracias a ti :)", "Un placer ayudarte "]
+        },
+        {"tag": "location",
+         "patterns": ["¿Donde se encuentran ubicados?", "¿Tienen algún link?"],
+         "responses": ["No tenemos una tienda física, sin embargo, nos puedes encontrar en GeekyDrop:)",
+                        "Claro, este es el link de nuestra tienda virtual: https://geekydrop.com/seller/smi"]
+        },
+        {"tag": "payments",
+         "patterns": ["¿Puedo pagar con tarjetas de crédito?", "Aceptan clave?", "Yappy?" ],
+         "responses": ["Así es", "Debes verificar en la web de GeekyDrop.", "Sí, puedes pagar con yappy a través de GeekyDrop."]
+        },
+        {"tag": "opentoday",
+         "patterns": ["Qué días abren?"],
+         "responses": ["Somos una tienda virtual! Estamos abiertos todos los días y horas del año ;)"]
+        },
+        {"tag": "Products",
+         "patterns": ["¿Qué venden?", "Tienen monitores gaming?", "Cuántos Hz tienen los monitores?", "Venden monitores para editar?",
+                      "Venden cases?", "Venden chasis?", "Tienen fuentes de alimentación?", "Venden fuentes de poder?", "Tienen a la venta power supplies?"
+                      ],
+
+          "responses": ["Principalmente monitores, sin embargo, también tenemos a la venta power supplies y chasis para computadoras!",
+                        "Sí, Tenemos diferentes modelos que se ajustan a la exigencia del usuario!",
+                        "Desde 60Hz hasta 165Hz", "Sí, contamos con una serie profesional dedicada para creadores de contenido",
+                         "Correcto, tenemos cases a la venta, puedes verlos en nuestra página web", "Si, puedes verlos en nuestra página web",
+                        "Sí tenemos fuentes de poder a la venta!", "Correcto, tenemos fuentes de poder pensadas para una durabilidad a largo plazo!",
+                        "Así es, tenemos 3 modelos de power supplies con componentes de alta calidad!."
+
+                      ]
+        },
+        {"tag": "Warranty",
+         "patterns": ["Mi equipo está dañado!", "Mi monitor viene con un defecto", "La pantalla llegó dañada", "No sirve!"],
+         "responses": ["¡Oh no! Puedes al correo sales@porthopeinvestment.com o contactanos al siguiente número 275-6822"]
+        }
+]
+}

@@ -1,0 +1,112 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[2]:
+
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+x=[12, 15, 3, 5, 6, 19, 7, 0, 1, 20]
+y=[5, 80, 8, 9, 17, 50, 30, 90, 60, 11]
+y_2=[5, 4, 8, 9, 17, 50, 30, 90, 60, 11]
+
+sns.set()
+
+
+plt.bar(x,y) #kind='bar'
+plt.plot(x,y_2, '-o', color='y') #kind='bar'
+plt.show()
+
+
+# In[10]:
+
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+x=[12, 15, 3, 5, 6, 19, 7, 0, 1, 20]
+y=[5, 80, 8, 9, 17, 50, 30, 90, 60, 11]
+y_2=[5, 4, 8, 9, 17, 50, 30, 90, 60, 11]
+
+sns.set(context='poster', style='white', palette='dark', font='sans-serif', font_scale=0.55, color_codes='y')
+
+
+plt.bar(x,y) #kind='bar'
+plt.plot(x,y_2, '-o', color='y') #kind='bar'
+plt.title('Grafica Aleatoria')
+plt.show()
+
+
+# In[16]:
+
+
+import seaborn as sns
+iris = sns.load_dataset("iris")
+
+iris.head(10)
+
+
+# In[17]:
+
+
+sns.relplot(x='sepal_length', y='sepal_width', hue='species', data=iris)
+plt.show()
+
+
+# In[21]:
+
+
+sns.relplot(x='sepal_length',y='petal_length', hue='species', style='species', kind='line', data=iris)
+plt.show()
+
+
+# In[23]:
+
+
+sns.catplot(x="sepal_length", y="species", data=iris)
+plt.show()
+
+
+# In[25]:
+
+
+sns.jointplot(x="sepal_length", y='sepal_width', data=iris)
+plt.show()
+
+
+# In[26]:
+
+
+sns.distplot(iris["sepal_length"])
+
+
+# In[29]:
+
+
+sns.pairplot(iris, hue='species')
+plt.show()
+
+
+# In[31]:
+
+
+sns.regplot(x="sepal_length", y="sepal_width", data=iris)
+plt.show()
+
+
+# In[33]:
+
+
+sns.lmplot(x="sepal_length", y="sepal_width", hue='
+           ', data=iris)
+plt.show()
+
+
+# In[ ]:
+
+
+
+

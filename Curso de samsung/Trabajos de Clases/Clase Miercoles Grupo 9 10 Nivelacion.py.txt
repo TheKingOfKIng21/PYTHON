@@ -1,0 +1,90 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# Ejercicio
+# Escribir un programa que guarde en un diccionario los precios de las frutas de la tabla, pregunte al usuario por una fruta, un número de kilos y muestre por pantalla el precio de ese número de kilos de fruta. Si la fruta no está en el diccionario debe mostrar un mensaje informando de ello.
+# 
+# Fruta	Precio
+# 
+# Plátano	1.35
+# 
+# Manzana	0.80
+# 
+# Pera	0.85
+# 
+# Naranja	0.70
+# 
+
+# In[12]:
+
+
+frutas ={'Platano':1.35, 'Manzana':0.8, 'Pera': 0.85, 'Naranja':0.7}
+fruta = input('¿Que fruta deseas comprar? ') #Pera
+fruta = fruta.title()
+kilos = float(input('¿Cuantos kilos desea comprar? ')) #2
+
+if fruta in frutas:
+    print(kilos, ' kilos de', fruta, 'valen', frutas[fruta]*kilos, '€')
+         #2 kilos de Pera valen 1.7 €
+else:
+    print("Lo siento, la fruta", fruta, "no esta disponible")
+
+
+# Ejercicio
+# Escribir una función que reciba una muestra de números en una lista y devuelva su media, varianza y desviación típica en un diccionario.
+
+# In[29]:
+
+
+import numpy as np
+from numpy import var
+
+def meanPropio(listaNum):
+    print("Entre por esta funcion 1")
+    n=len(listaNum)
+    media=sum(listaNum)/n
+    return media
+
+def meanPropio(listaNum): 
+    print("Entre por esta funcion 2")
+    return sum(listaNum)/len(listaNum)
+
+def varianza(listaNum):
+    print("Entre por esta funcion 3")
+    varianzaFin=var(listaNum)
+    return varianzaFin
+
+def varianza(listaNum):
+    print("Entre por esta funcion 4")
+    return var(listaNum)
+    
+
+listaNum=[2,3,22,5,77,98,1]
+
+media2=mean(listaNum)
+print("La media de la lista ingresada es: ", media2)
+
+
+varianza2=varianza(listaNum)
+print("La varianza de la lista ingresada es: ", varianza2)
+
+
+# El fichero cotizacion.csv contiene las cotizaciones de las empresas del IBEX35 con las siguientes columnas: nombre (nombre de la empresa), Final (precio de la acción al cierre de bolsa), Máximo (precio máximo de la acción durante la jornada), Mínimo (precio mínimo de la acción durante la jornada), volumen (Volumen al cierre de bolsa), Efectivo (capitalización al cierre en miles de euros). Construir una función que construya un DataFrame a partir del un fichero con el formato anterior y devuelva otro DataFrame con el mínimo, el máximo y la media de dada columna.
+
+# In[28]:
+
+
+import pandas as pd
+
+def resumen_cotizaciones(fichero): #Recibe el nombre del archivo que se va a leer(Cargar)
+    Datos = pd.read_csv(fichero, sep=';', decimal=',', thousands='.', index_col=0) #Con esta linea estamos cargando el fichero
+    return pd.DataFrame([Datos.min(), Datos.max(), Datos.mean()], index=['Minimo', 'Maximo', 'Media'])
+
+resumen_cotizaciones('cotizacionIbex.csv')
+
+
+# In[ ]:
+
+
+
+

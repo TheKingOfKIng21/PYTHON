@@ -1,0 +1,67 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
+#importar libreria 
+#import tkinter
+from tkinter import * #Importo todos los modulos o funcionalidades que la libreria me provee
+
+
+def callback():
+    Label(win, text="Hola Mundo", font=('Century 20 bold')).pack(pady=4)
+    
+def hacer_click():
+    try:
+        
+        #Con la funcion get obtengo la frase que el usuario ha ingresado en 
+        #el text input llamdo entrada_texto
+        _valor=entrada_texto.get()
+        
+        #Despues de capturarlo se imprime en la Label llamado etiqueta
+        etiqueta.config(text=_valor)
+        
+        
+        #Con esta linea logramos borrar el mensaje de la barra de escritura 
+        #cuando el usuario presiona el boton. 
+        entrada_texto.delete(0, END)
+        
+
+    except ValueError:
+        etiqueta.config(text="Introduce un mensaje!")
+
+#La funcion Tk() crea una instancia de una ventana. 
+#win=Tk()
+win=Toplevel()
+win.geometry("450x350") #Configuramos la geometria de la ventana.
+#win.grid(column=0, row=0, padx=(50,50), pady=(10,10))
+win.title("Mi primer chatbot")
+win.columnconfigure(0, weight=3)
+win.rowconfigure(0, weight=3)
+win.config(bg='deep pink')
+#win.grid(column=0, row=0, padx=(50,50), pady=(10,10))
+
+etiqueta = Label(win, text="Mensaje")
+etiqueta.grid(column=1, row=0)
+etiqueta.config(bg='plum1')
+
+        
+
+btn=Button(win, text="SEND", width=20, command=hacer_click)
+#btn.pack(ipadx=40)
+btn.grid(column=2, row=1)
+btn.config(bg='cyan')
+
+
+valor=""
+entrada_texto = Entry(win, width=60, textvariable=valor)
+entrada_texto.grid(column=1, row=1)
+
+logPic=PhotoImage(file='pic.png')
+logPicLabel=Label(win, image=logPic, bg='deep pink')
+logPicLabel.grid(column=2, row=0)
+    
+win.bind('<Return>',lambda event:callback())
+win.mainloop()
+

@@ -1,0 +1,210 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[11]:
+
+
+import pandas as pd
+
+
+
+df1 = pd.DataFrame(
+    {
+        "A": ["A0", "A1", "A2", "A3"],
+        "B": ["B0", "B1", "B2", "B3"],
+        "C": ["C0", "C1", "C2", "C3"],
+        "D": ["D0", "D1", "D2", "D3"],
+    },
+    index=[0, 1, 2, 3],
+)
+
+
+
+print(df1)
+
+
+df2 = pd.DataFrame(
+    {
+        "A": ["A4", "A5", "A6", "A7"],
+        "B": ["B4", "B5", "B6", "B7"],
+        "C": ["C4", "C5", "C6", "C7"],
+        "D": ["D4", "D5", "D6", "D7"],
+    },
+    index=[4, 5, 6, 7],
+)
+
+
+print(" ")
+print(" ")
+
+print(df2)
+
+
+df3 = pd.DataFrame(
+    {
+        "A": ["A8", "A9", "A10", "A11"],
+        "B": ["B8", "B9", "B10", "B11"],
+        "C": ["C8", "C9", "C10", "C11"],
+        "D": ["D8", "D9", "D10", "D11"],
+    },
+    index=[8, 9, 10, 11],
+)
+
+print(" ")
+print(" ")
+
+print(df3)
+
+
+frames = [df1, df2, df3] #Con esta linea estoy guardando los dataframes en una sola variable, pero aun no estan concatenados
+
+
+print(" ")
+print(" ")
+print(" Estos son los dataframes sin unir")
+print(frames)
+
+result = pd.concat(frames) #Con la funcion concat "Unimos" todos los dataframes en uno solo.
+
+
+print(" ")
+print(" ")
+print(" Estos son los dataframes ya unidos")
+print(result)
+
+#numpy.concatenate()
+#pd.append()
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[13]:
+
+
+
+result = pd.concat(frames) #Con la funcion concat "Unimos" todos los dataframes en uno solo.
+print(result)
+
+result2 = pd.concat(frames, keys=["df1", "df2", "df3"]) #Con la funcion concat "Unimos" todos los dataframes en uno solo.
+print("")
+print("")
+print(result2) #En esta variable tenemos todos los conjuntos unidos e indexados
+
+
+# In[18]:
+
+
+result2.loc["df3"]
+
+
+
+
+# In[23]:
+
+
+
+df1 = pd.DataFrame(
+    {
+        "A": ["A0", "A1", "A2", "A3"],
+        "B": ["B0", "B1", "B2", "B3"],
+        "C": ["C0", "C1", "C2", "C3"],
+        "D": ["D0", "D1", "D2", "D3"],
+    },
+    index=[0, 1, 2, 3],
+)
+
+
+
+df4 = pd.DataFrame(
+    {
+        "B": ["B2", "B3", "B6", "B7"],
+        "D": ["D2", "D3", "D6", "D7"],
+        "F": ["F2", "F3", "F6", "F7"],
+    },
+    index=[2, 3, 6, 7],
+)
+
+frames2=[df1, df4]
+
+print(df1)
+
+print(" ")
+print(" ")
+
+print(df4)
+
+result3=pd.concat(frames2, axis=1)
+
+
+print(" ")
+print(" ")
+
+print(result3)
+
+
+result4=pd.concat(frames2, axis=0)
+
+
+print(" ")
+print(" ")
+
+print(result4)
+
+
+# In[27]:
+
+
+result5=pd.concat(frames2, axis=0, join="inner")
+
+
+print(" ")
+print(" ")
+
+print(result5)
+
+
+result6=pd.concat(frames2, axis=1, join="outer")
+
+
+print(" ")
+print(" ")
+
+print(result6)
+
+
+# In[29]:
+
+
+#result7=pd.concat(frames2, axis=1, join="outer")
+result7=pd.concat(frames2, axis=1).reindex(df1.index)
+
+
+print(" ")
+print(" ")
+
+print(result7)
+
+result7=pd.concat(frames2, axis=1).reindex(df4.index)
+
+
+print(" ")
+print(" ")
+
+print(result7)
+
+
+# In[ ]:
+
+
+
+
